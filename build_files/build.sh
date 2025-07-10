@@ -20,7 +20,6 @@ dnf5 install -y \
     # libva-nvidia-driver # For VA-API acceleration
     # vdpauinfo # For VDPAU utilities
     # nvidia-settings # For NVIDIA X Server Settings utility
-    && \
     # Remove any conflicting Mesa drivers if necessary (though akmod-nvidia usually handles this)
     # rpm-ostree override remove mesa-va-drivers mesa-    # Remove any conflicting Mesa drivers if necessary (though akmod-nvidia usually handles this)
     # rpm-ostree override remove mesa-va-drivers mesa-vdpau-drivers \
@@ -30,7 +29,7 @@ dnf5 install -y \
     # && \
     # Ensure akmods are built for the current kernel
     # This step is critical for the drivers to function
-    /usr/bin/akmods --force --kernels $(rpm -q kernel --queryformat '%{VERSION}-%{RELEASE}.%{ARCH}') --target /usr/lib/modules/$(rpm -q kernel --queryformat '%{VERSION}-%{RELEASE}.%{ARCH}')/extra
+    && /usr/bin/akmods --force --kernels $(rpm -q kernel --queryformat '%{VERSION}-%{RELEASE}.%{ARCH}') --target /usr/lib/modules/$(rpm -q kernel --queryformat '%{VERSION}-%{RELEASE}.%{ARCH}')/extra
 
 # Packages can be installed from any enabled yum repo on the image.
 # RPMfusion repos are available by default in ublue main images
