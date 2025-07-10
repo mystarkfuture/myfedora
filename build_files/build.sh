@@ -14,7 +14,7 @@ dnf5 install -y \
 # The akmod-nvidia package will build the kernel modules for your kernel version
 dnf5 install -y \
     akmod-nvidia \
-    xorg-x11-drv-nvidia-cuda \
+    xorg-x11-drv-nvidia-cuda
     # Add other NVIDIA related packages if needed, e.g., for specific tools
     # xorg-x11-drv-nvidia-libs # This is usually pulled in by xorg-x11-drv-nvidia-cuda
     # libva-nvidia-driver # For VA-API acceleration
@@ -29,7 +29,9 @@ dnf5 install -y \
     # && \
     # Ensure akmods are built for the current kernel
     # This step is critical for the drivers to function
-    && /usr/bin/akmods --force --kernels $(rpm -q kernel --queryformat '%{VERSION}-%{RELEASE}.%{ARCH}') --target /usr/lib/modules/$(rpm -q kernel --queryformat '%{VERSION}-%{RELEASE}.%{ARCH}')/extra
+
+/usr/bin/akmods --force --kernels $(rpm -q kernel --queryformat '%{VERSION}-%{RELEASE}.%{ARCH}') --target /usr/lib/modules/$(rpm -q kernel --queryformat '%{VERSION}-%{RELEASE}.%{ARCH}')/extra
+
 
 # Packages can be installed from any enabled yum repo on the image.
 # RPMfusion repos are available by default in ublue main images
