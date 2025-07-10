@@ -5,7 +5,7 @@ set -ouex pipefail
 ### Install packages
 
 # Add RPM Fusion Nonfree repository for NVIDIA drivers
-RUN dnf5 install \
+dnf5 install \
     https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
     https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm 
 
