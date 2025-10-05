@@ -5,10 +5,11 @@ set -ouex pipefail
 # Copy fsroot/ to /
 rsync -rvK /ctx/fsroot/ /
 
-chmod +x /ctx/scripts/*
+cp /ctx/scripts /tmp/ctx/scripts
+chmod -x /tmp/ctx/scripts/*
 
-/ctx/scripts/01-copr.sh
-/ctx/scripts/02-packages.sh
-/ctx/scripts/03-mods.sh
-/ctx/scripts/04-systemd.sh
-/ctx/scripts/05-cleanup.sh
+/tmp/ctx/scripts/01-copr.sh
+/tmp/ctx/scripts/02-packages.sh
+/tmp/ctx/scripts/03-mods.sh
+/tmp/ctx/scripts/04-systemd.sh
+/tmp/ctx/scripts/05-cleanup.sh
