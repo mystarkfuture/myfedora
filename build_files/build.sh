@@ -5,8 +5,8 @@ set -ouex pipefail
 # Copy fsroot/ to /
 rsync -rvK /ctx/fsroot/ /
 
-/ctx/build_files/01-copr.sh
-/ctx/build_files/02-packages.sh
-/ctx/build_files/03-mods.sh
-/ctx/build_files/04-systemd.sh
-/ctx/build_files/05-cleanup.sh
+/ctx/01-copr.sh
+/ctx/02-packages.sh
+/ctx/03-mods.sh
+/ctx/04-systemd.sh
+/ctx/05-cleanup.sh
