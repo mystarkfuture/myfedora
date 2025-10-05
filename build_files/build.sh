@@ -7,11 +7,11 @@ dnf5 install -y rsync
 # Copy fsroot/ to /
 rsync -rvK /ctx/fsroot/ /
 
-cp -r /ctx/scripts /tmp/ctx/scripts
+cp -r /ctx/scripts /tmp/scripts
 chmod -x /tmp/ctx/scripts/*
 
-/tmp/ctx/scripts/01-copr.sh
-/tmp/ctx/scripts/02-packages.sh
-/tmp/ctx/scripts/03-mods.sh
-/tmp/ctx/scripts/04-systemd.sh
-/tmp/ctx/scripts/05-cleanup.sh
+/tmp/scripts/01-copr.sh
+/tmp/scripts/02-packages.sh
+/tmp/scripts/03-mods.sh
+/tmp/scripts/04-systemd.sh
+/tmp/scripts/05-cleanup.sh
