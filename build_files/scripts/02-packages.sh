@@ -38,6 +38,7 @@ gnome_shell_extensions=(
 )
 
 development_utils=(
+    "git"
     "git-credential-libsecret"
     "code"
     "python3-pip"
