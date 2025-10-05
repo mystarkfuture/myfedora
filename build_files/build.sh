@@ -8,7 +8,7 @@ dnf5 install -y rsync
 rsync -rvK /ctx/fsroot/ /
 
 cp -r /ctx/scripts /tmp/scripts
-chmod -x /tmp/scripts/*
+chmod 777 /tmp/scripts/*
 
 /tmp/scripts/01-copr.sh
 /tmp/scripts/02-packages.sh
